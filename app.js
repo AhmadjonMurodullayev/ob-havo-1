@@ -90,7 +90,7 @@ const displayForecast = (forecastData) => {
 };
 
 const initApp = () => {
-    searchInput.value = 'Tashkent';  
+    searchInput.value = 'Samarqand';  
     fetchWeatherData(); 
 };
 
