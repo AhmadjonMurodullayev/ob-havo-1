@@ -1,53 +1,66 @@
-body{
+body {
     margin: 0;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: 
-        linear-gradient(
-            to bottom,
-            #dcdcdc 50%,
-            #e9e9e9 50%
-        );
-    font-family: sans-serif;
+    background-color: chartreuse;
+    font-family: 'Arial', sans-serif;
 }
-*{
+
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
-main{
-    width: 300px;
-    height: max-content;
+
+main {
+    /* width: 100%;
+    max-width: 400px;
     min-height: 300px;
     background-color: #f7f7f7;
     border-radius: 30px;
-    box-shadow: 0 30px 50px #5553;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
     padding: 30px;
-    box-sizing: border-box;
+    box-sizing: border-box; */
 }
-main form{
+
+main form {
     border: 1px solid #5552;
     display: flex;
     border-radius: 30px;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
-main form input, 
-main form button{
+
+main form input, main form button {
     border: none;
     background-color: transparent;
     outline: none;
     padding: 10px;
     box-sizing: border-box;
+    width: 80%;
 }
-main form i{
+
+main form button {
+    background-color: #f78a55;
+    color: white;
+    align-items: center;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 20%;
+}
+
+main form i {
     opacity: 0.7;
 }
-main .result{
+
+main .result {
     padding-top: 20px;
     text-align: center;
 }
-main .result .name{
+
+main .result .name {
     font-weight: bold;
     font-size: large;
     display: flex;
@@ -55,63 +68,198 @@ main .result .name{
     align-items: center;
     gap: 10px;
 }
-main .temperature img{
-    width: 150px;
+
+main .temperature img {
+    width: 100px;
     filter: drop-shadow(0 10px 50px #555);
 }
-main .temperature figcaption{
-    font-size: 3em;
+
+main .temperature figcaption {
+    font-size: 2.5em;
 }
-main .description{
+
+main .description {
     padding: 10px 0 30px;
 }
-main ul{
+
+main ul {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
-main li{
+.container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    min-height: 300px;
+    background-color: #f7f7f7;
+    border-radius: 30px;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+main li {
+    margin:  0px auto;
+    justify-content: center;
     background-color: #f78a55;
     color: #fff;
+    width: 60px;
     border-radius: 10px;
-    padding: 20px 10px;
-    background-image: linear-gradient(
-        to bottom,
-        transparent 50%,
-        #0003 50%
-    );
+    padding: 10px 10px;
     font-weight: bold;
     font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-main ul li i{
+
+main ul li i {
     font-size: 2em;
-    margin: 20px 0;
-    display: block!important;
+    margin: 10px 0;
 }
-main li:nth-child(2){
+
+main li:nth-child(2) {
     background-color: #b56291;
 }
-main li:nth-child(3){
+
+main li:nth-child(3) {
     background-color: #48567b;
 }
-main.error{
+
+main.error {
     animation: errorEffect 0.3s linear 1;
 }
-@keyframes errorEffect{
-    0%{
-        transform: translate(10px, 5px)
+
+@keyframes errorEffect {
+    0% {
+        transform: translate(10px, 5px);
     }
-    25%{
-        transform: translate(-5px, 0)
+    25% {
+        transform: translate(-5px, 0);
     }
-    50%{
-        transform: translate(8px, 2px)
+    50% {
+        transform: translate(8px, 2px);
     }
-    75%{
-        transform: translate(-2px, 5px)
+    75% {
+        transform: translate(-2px, 5px);
     }
-    100%{
-        transform: translate(0, 0); 
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.forecast {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.forecast h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #555;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.forecast-day {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.forecast-day:hover {
+    transform: translateY(-5px);
+}
+
+.forecast-day h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.forecast-day img {
+    width: 50px;
+    margin-bottom: 5px;
+}
+
+.forecast-day p {
+    margin: 5px 0;
+    color: #555;
+    font-size: 0.9em;
+}
+.temp{
+    width: 100%;
+}
+.temp2{
+    width: 90px;
+}
+
+@media (max-width: 768px) {
+    main {
+        width: 90%;
+        padding: 20px;
+    }
+
+    main .temperature img {
+        width: 80px;
+    }
+
+    main .temperature figcaption {
+        font-size: 2em;
+    }
+
+    main ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    main ul li {
+        width: 60px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        width: 95%;
+        padding: 15px;
+    }
+
+    main form input, main form button {
+        padding: 8px;
+    }
+
+    main .temperature img {
+        width: 70px;
+    }
+
+    main .temperature figcaption {
+        font-size: 1.8em;
+    }
+
+    main ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .forecast-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main ul li {
+        width: 50px;
+        padding: 5px;
     }
 }
