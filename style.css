@@ -4,8 +4,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("./img/Rainy.jpg");
-    z-index: 100    ;
+    background-image: url("./img/background.jpg");
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     font-family: 'Arial', sans-serif;
 }
 
@@ -23,15 +26,18 @@ main form {
     border-radius: 30px;
     justify-content: space-between;
     margin-bottom: 20px;
+    color: white;
 }
 
-main form input, main form button {
+main form input,
+main form button {
     border: none;
     background-color: transparent;
     outline: none;
     padding: 10px;
     box-sizing: border-box;
     width: 80%;
+    color: chartreuse;
 }
 
 main form button {
@@ -53,7 +59,9 @@ main .result {
 }
 
 main .result .name {
-    font-weight: bold;
+    color: white;
+    font-size: 22px;
+    font-weight: 900;
     font-size: large;
     display: flex;
     justify-content: center;
@@ -80,24 +88,27 @@ main ul {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
+
 .container {
     margin: 0 auto;
     width: 100%;
     max-width: 400px;
     min-height: 300px;
-    background-color: #f7f7f7;
+    background-color: rgba(74, 152, 186, 0.2);
     border-radius: 30px;
     box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
     padding: 30px;
     box-sizing: border-box;
-    
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
+
 main li {
-    margin:  0px auto;
+    margin: 0px auto;
     justify-content: center;
     background-color: #f78a55;
-    color: #fff;
+    color: #d2cece;
     width: 60px;
     border-radius: 10px;
     padding: 10px 10px;
@@ -130,15 +141,19 @@ main.error {
     0% {
         transform: translate(10px, 5px);
     }
+
     25% {
         transform: translate(-5px, 0);
     }
+
     50% {
         transform: translate(8px, 2px);
     }
+
     75% {
         transform: translate(-2px, 5px);
     }
+
     100% {
         transform: translate(0, 0);
     }
@@ -152,7 +167,7 @@ main.error {
 .forecast h2 {
     margin-bottom: 10px;
     font-size: 1.5em;
-    color: #555;
+    color: #fff;
 }
 
 .forecast-grid {
@@ -162,12 +177,15 @@ main.error {
 }
 
 .forecast-day {
-    background-color: #ffffff;
+
     padding: 15px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     text-align: center;
     transition: transform 0.2s;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
 }
 
 .forecast-day:hover {
@@ -177,7 +195,7 @@ main.error {
 .forecast-day h3 {
     font-size: 1.1em;
     margin-bottom: 5px;
-    color: #333;
+    color: #fff;
 }
 
 .forecast-day img {
@@ -187,14 +205,26 @@ main.error {
 
 .forecast-day p {
     margin: 5px 0;
-    color: #555;
+    color: #fff;
     font-size: 0.9em;
 }
-.temp{
+
+.temp {
     width: 100%;
 }
-.temp2{
+
+.temp2 {
     width: 90px;
+}
+
+.search {
+    border: 2px solid rgb(128, 125, 125);
+    color: springgreen;
+
+}
+
+input ::placeholder {
+    color: springgreen;
 }
 
 @media (max-width: 768px) {
@@ -231,7 +261,8 @@ main.error {
         padding: 15px;
     }
 
-    main form input, main form button {
+    main form input,
+    main form button {
         padding: 8px;
     }
 
